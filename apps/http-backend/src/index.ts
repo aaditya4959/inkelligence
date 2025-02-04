@@ -1,8 +1,13 @@
-import express from "express"
 
+import express from "express";
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3001;
 const app = express();
+
+
+
+app.use(express.json());
+
 
 
 
