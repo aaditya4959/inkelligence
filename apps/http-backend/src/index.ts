@@ -1,4 +1,4 @@
-import {Request, Response} from "express";
+import {request, Request, response, Response} from "express";
 import express from "express"
 import dotenv from "dotenv"
 import checkToken from "./middlewares/checkToken";
@@ -7,11 +7,12 @@ import jwt from "jsonwebtoken";
 
 
 
+
 const PORT = process.env.PORT || 3001;
 const app = express();
 dotenv.config();
 
-const secret:string = process.env.JWT_SECRET || "blueseal";
+const secret = process.env.JWT_SECRET as string;
 
 
 
@@ -103,7 +104,7 @@ app.post("/api/v1/signin", (req:Request, res:Response) => {
 })
 
 
-
+//@ts-ignore  Fix the ts error here.
 app.post("/api/v1/create-room",checkToken ,(req,res) => {
 
     // the code for creating a new room goes here
